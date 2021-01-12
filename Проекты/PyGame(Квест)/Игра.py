@@ -107,6 +107,8 @@ class Player(pygame.sprite.Sprite):
 
     def move(self, x, y):
         self.pos = (x, y)
+        self.rect = self.image.get_rect().move(
+            tile_width * x + 15, tile_height * y + 5)
         if level_map[y][x] == '*':
             Tile('empty', x, y)
             self.count += 1
