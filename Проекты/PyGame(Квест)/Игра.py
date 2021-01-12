@@ -76,7 +76,7 @@ def load_level(filename):
 tile_images = {
     'wall': load_img('wall.png'),
     'empty': load_img('floor.png'),
-    'stone': load_img('stone.png')
+    'key': load_img('key.png')
 }
 player_image = load_img('player.png')
 
@@ -110,6 +110,7 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect().move(
             tile_width * x + 15, tile_height * y + 5)
         if level_map[y][x] == '*':
+            generate_level(load_level("map.txt"))
             Tile('empty', x, y)
             self.count += 1
             print(self.count)
@@ -151,7 +152,7 @@ def generate_level(level):
             elif level[y][x] == '#':
                 Tile('wall', x, y)  # клетка со стеной
             elif level[y][x] == '*':
-                Tile('stone', x, y)
+                Tile('key', x, y)
             elif level[y][x] == '@':
                 Tile('empty', x, y)  # пустая клетка
                 new_player = Player(x, y)  # создать персонажа по координатам х, у
