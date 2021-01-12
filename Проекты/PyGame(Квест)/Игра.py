@@ -179,7 +179,7 @@ while running:
                 move(player, 'up')
     # изменяем ракурс камеры
     # обновляем положение всех спрайтов
-    screen = pygame.display.set_mode((400, 400))
+    screen = pygame.display.set_mode((550, 550))
     screen.fill(pygame.Color('#000000'))
     tiles_group.draw(screen)
     player_group.draw(screen)
