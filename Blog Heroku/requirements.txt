@@ -1,7 +1,0 @@
-flask
-flask_login
-werkzeug
-flask_wtf
-wtforms
-sqlalchemy
-datetime
